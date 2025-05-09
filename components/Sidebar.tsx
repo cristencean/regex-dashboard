@@ -1,11 +1,11 @@
 'use client';
 
-import { AppState } from '@/store';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { AppState } from '@/store';
 import { setMode } from '@/store/dashboardSlice';
-import EditRegex from './EditRegex';
-import ApprovalRegex from './ApprovalRegex';
+import RegexEditor from './RegexEditor';
+import RegexApprover from './RegexApprover';
 
 const Sidebar: React.FC = () => {
     const mode = useSelector((state: AppState) => state.dashboard.mode);
@@ -15,23 +15,24 @@ const Sidebar: React.FC = () => {
 
     return (
         <div>
-            <h2 className="text-lg font-bold mb-4">Regex Sidebar</h2>
-            <div className="flex space-x-2 mb-4">
+            <div className="flex space-x-2 mb-4 mt-4">
                 <button
                     onClick={() => dispatch(setMode('edit'))}
-                    className={`px-4 py-2 rounded ${isEditMode ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                    className={`px-4 py-2 rounded text-lg font-semibold ${isEditMode ? 
+                        'bg-blue-500 text-white' : 'bg-gray-200 cursor-pointer'}`}
                 >
-                    Edit mode
+                    Regex editor
                 </button>
                 <button
                     onClick={() => dispatch(setMode('approval'))}
-                    className={`px-4 py-2 rounded ${!isEditMode ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                    className={`px-4 py-2 rounded text-lg font-semibold ${!isEditMode ? 
+                        'bg-blue-500 text-white' : 'bg-gray-200 cursor-pointer'}`}
                 >
-                    Approval mode
+                    Regex approver
                 </button>
             </div>
 
-            {isEditMode ? <EditRegex /> : <ApprovalRegex />}
+            {isEditMode ? <RegexEditor /> : <RegexApprover />}
         </div>
     );
 };
