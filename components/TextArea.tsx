@@ -48,7 +48,7 @@ const TextArea: React.FC = () => {
                     {regexList.map((regex, index) => {
                         return (
                             <div key={index} className='mt-2'>
-                                <strong>{regex.value}</strong> ({regex.matches.length} matches):
+                                <strong>{regex.value}</strong> ({regex.matches.length} {regex.matches.length === 1 ? 'match' : 'matches'}):
                                 {regex.matches.length > 0 ? regex.matches.map((match, matchIndex) => (
                                     <span key={matchIndex} className="text-blue-500">
                                         {(matchIndex === 0 ? ' ' : ', ') + match}

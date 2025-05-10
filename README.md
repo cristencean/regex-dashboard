@@ -4,6 +4,7 @@ Next.js dashboard that uses regex to extract expressions from text copies.
 
 * Uses Redux to manage the global state
 * Tailwindcss for styling the UI
+* Jest and React Testing Library for Unit Testing
 
 ## About 
 
@@ -16,6 +17,12 @@ To get started, just clone the repository and run `npm install && npm run dev`:
     git clone https://github.com/cristencean/regex-dashboard.git
     npm install
     npm run dev
+    
+## Run the unit testing
+
+To run the unit testing just type `npm run test`:
+
+    npm run test
 
 ## Project structure
 
