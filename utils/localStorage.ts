@@ -1,4 +1,4 @@
-const REGEX_DASHBOARD_KEY = 'regexDashboard';
+export const REGEX_DASHBOARD_KEY = 'regexDashboard';
 
 export const saveToLocalStorage = (data: string) => {
   localStorage.setItem(REGEX_DASHBOARD_KEY, data);

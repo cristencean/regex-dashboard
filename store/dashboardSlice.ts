@@ -15,7 +15,7 @@ interface DashboardState {
     regexList: RegexItem[];
 };
 
-const initialState: DashboardState = {
+export const initialState: DashboardState = {
     mode: 'edit',
     content: '',
     regexList: [],
